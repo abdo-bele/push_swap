@@ -27,7 +27,6 @@ int	main(int ac, char **av)
 		{
 			if (a[i] >= a[b+1])
 			{
-				printf("%d,-- %d", a[i], a[b+1]);
 				printf("NOT sorted");
 				return (0);
 			}
@@ -36,7 +35,4 @@ int	main(int ac, char **av)
 		i++;
 		b = i;
 	}
-	printf("%d", a[0]);
-	printf("%d", a[1]);
-	printf("%d", a[2]);
 }
