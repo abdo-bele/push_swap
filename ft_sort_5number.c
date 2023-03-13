@@ -71,4 +71,5 @@ void	ft_check_max(t_data *data)
 		a = a->next;
 		data->counta++;
 	}
+	
 }
