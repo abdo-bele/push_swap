@@ -45,3 +45,4 @@ void	rrb(t_data *data)
 	rr->next = f;
 	data->stackb = rr;
 }
+

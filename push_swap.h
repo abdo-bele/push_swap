@@ -7,8 +7,7 @@
 
 typedef struct s_list
 {
-	// struct s_list	*last;
-	void			*content;
+	int				content;
 	struct s_list	*next;
 }					t_list;
 
@@ -22,19 +21,27 @@ typedef struct s_data
 	int		count;
 }					t_data;
 
-int		ft_atoi(const char *str);
-char	**ft_split(char const *s, char c);
-int		ft_lstsize(t_list *lst);
 void	ra(t_data *data);
-t_list	*ft_lstlast(t_list *lst);
 void	pb(t_data *data);
 void	pa(t_data *data);
+void	sb(t_data *data);
+void	rb(t_data *data);
+void	sa(t_data *data);
+void	rr(t_data *data);
+void	ss(t_data *data);
+void	rrb(t_data *data);
+void	rra(t_data *data);
+void	rrr(t_data *data);
+int		ft_lstsize(t_list *lst);
+int		ft_atoi(const char *str);
 void	ft_check_max(t_data *data);
-void	ft_sort_end_push(t_data *data);
 void	ft_sort_5number(t_data *data);
 void	ft_sort_3number(t_data *data);
+void	ft_sort_end_push(t_data *data);
+char	**ft_split(char const *s, char c);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
-t_list	*ft_lstnew(void *content);
+t_list	*ft_lstlast(t_list *lst);
+t_list	*ft_lstnew(int content);
 
 #endif

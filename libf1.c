@@ -38,7 +38,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(int content)
 {
 	t_list	*a;
 
@@ -68,11 +68,16 @@ int	ft_atoi(const char *str)
 			b = b * (-1);
 		i++;
 	}
+	if (str[i] >= '0' && str[i] <= '9')
+	{
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		r = r * 10 + (str[i] - '0');
 		i++;
 	}
+	}
+	else
+		exit(1);
 	return (r * b);
 }
 

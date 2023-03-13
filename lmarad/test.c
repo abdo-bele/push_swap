@@ -29,39 +29,39 @@ int	main(int ac, char **av)
 		data.count = i;
 		// diyal 3 5dama
 		// ft_sort_3number(&data);
-		ft_sort_5number(&data);
+		// ft_sort_5number(&data);
 		// while (data.stacka)
 		// {
 		// 	printf("%d\n",data.stacka->content);
 		// 	data.stacka = data.stacka->next;
 		// }
 		
-		// a = malloc(sizeof(int) * i);
-		// i--;
-		// while (i >= 0)
-		// {
-		// 	a[i] = ft_atoi(ab[i]);
-		// 	i--;
-		// }
-		// i = 0;
-		// while (i < data.count)
-		// {
-		// 	while (b + 1 < data.count)
-		// 	{
-		// 		if (a[i] >= a[b + 1])
-		// 		{
-		// 			// printf("NOT sorted");
-		// 			if (data.count <= 3)
-		// 				ft_sort_3number(&data);
-		// 			else if (data.count <= 5)
-		// 				ft_sort_5number(&data);
-		// 			exit(1);
-		// 		}
-		// 		b++;
-		// 	}
-		// 	i++;
-		// 	b = i;
-		// }
+		a = malloc(sizeof(int) * i);
+		i--;
+		while (i >= 0)
+		{
+			a[i] = ft_atoi(ab[i]);
+			i--;
+		}
+		i = 0;
+		while (i < data.count)
+		{
+			while (b + 1 < data.count)
+			{
+				if (a[i] >= a[b + 1])
+				{
+					// printf("NOT sorted");
+					if (data.count <= 3)
+						ft_sort_3number(&data);
+					else if (data.count <= 5)
+						ft_sort_5number(&data);
+					exit(1);
+				}
+				b++;
+			}
+			i++;
+			b = i;
+		}
 	}
 
 	// i = 0;

@@ -2,8 +2,14 @@
 
 void	ft_sort_3number(t_data *data)
 {
-	if (data->stacka->content > data->stacka->next->content
-		&& data->stacka->next->content < data->stacka->next->next->content)
+	if (data->count == 2)
+	{
+		printf("sa\n");
+		sa(data);
+	}
+	else if (data->stacka->content > data->stacka->next->content
+		&& data->stacka->next->content < data->stacka->next->next->content
+		&& data->stacka->content > data->stacka->next->next->content)
 	{
 		printf("ra\n");
 		ra(data);
@@ -36,7 +42,10 @@ void	ft_sort_3number(t_data *data)
 		ra(data);
 		sa(data);
 	}
-	// printf("%d", data->stacka->content);
-	// printf("%d", data->stacka->next->content);
-	// printf("%d", data->stacka->next->next->content);
+	// t_list *h = data->stacka;
+	// while (h)
+	// {
+	// 	printf("%d ", h->content);
+	// 	h = h->next;
+	// }
 }
