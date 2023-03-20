@@ -6,6 +6,8 @@ int main(int ac, char **av)
     char	**ab;
 	int		i;
 	t_list	*a;
+	t_list	*l;
+	t_list	*f;
 	t_list	*b;
 
 	i = 1;
@@ -32,28 +34,45 @@ int main(int ac, char **av)
 		}
 		data.count = i;
 	}
+	
 	if (ac > 1)
 	{
 		a = data.stacka;
 		b = data.stacka;
+		l = data.stacka;
+		f = data.stacka;
 		i = 0;
+		while (l)
+		{
+			while (f->next)
+			{
+				if (l->content == f->next->content)
+					exit(1);
+				f = f->next;
+			}
+			l = l->next;
+			f = l;
+		}
 		while (a)
 		{
 			while (b->next)
 			{
 				if (a->content > b->next->content)
 				{
-					// printf("NOT sorted");
 					if (data.count <= 3)
 						ft_sort_3number(&data);
 					else if (data.count <= 5)
 						ft_sort_5number(&data);
 					else if (data.count > 5)
 						ft_sort_5number(&data);
-					exit(1);
+					// t_list *h = data.stacka;
+					// while (h)
+					// {
+					// 	printf("%d ", h->content);
+					// 	h = h->next;
+					// }
+					exit(0);
 				}
-				if (a->content == b->next->content)
-					return (0);
 				b = b->next;
 			}
 			a = a->next;

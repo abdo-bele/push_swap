@@ -11,6 +11,7 @@ void	ft_sort_3number(t_data *data)
 		&& data->stacka->next->content < data->stacka->next->next->content
 		&& data->stacka->content > data->stacka->next->next->content)
 	{
+	
 		printf("ra\n");
 		ra(data);
 	}
