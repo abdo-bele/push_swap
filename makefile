@@ -1,6 +1,6 @@
 NAME = push_swap
 
-SRC = test1.c \
+SRC = push_swap.c \
 		move.c \
 		move2.c \
 		libf1.c \

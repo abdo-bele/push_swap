@@ -1,9 +1,26 @@
 #include "push_swap.h"
 
+void	ft_check(char *av)
+{
+	int i;
+
+	// i = ft_strlen(av);
+	i = 0;
+	while (av[i])
+	{
+		if(av[i] != ' ')
+			return ;
+		i++;
+	}
+	printf("error");
+	exit(1);
+}
+
 int main(int ac, char **av)
 {
     t_data	data;
     char	**ab;
+    char	*al;
 	int		i;
 	t_list	*a;
 	t_list	*l;
@@ -11,32 +28,29 @@ int main(int ac, char **av)
 	t_list	*b;
 
 	i = 1;
+	data.count = 0;
 	if (ac < 2)
 		return (0);
-	if (ac > 2)
-	{
-		data.count = ac - 1;
-		while (av[i])
-		{
-				ft_lstadd_back(&data.stacka ,ft_lstnew(ft_atoi(av[i])));
-				i++;
-		}
-	}
-	else
-	{
-		i = 0;
-		ab = ft_split(av[1], ' ');
-		while (ab[i])
-		{
-
-				ft_lstadd_back(&data.stacka ,ft_lstnew(ft_atoi(ab[i])));
-				i++;
-		}
-		data.count = i;
-	}
-	
 	if (ac > 1)
 	{
+		al = malloc(1);
+		al[0] = '\0';
+		while(av[i])
+		{
+			ft_check(av[i]);
+			al = ft_strjoin(al, av[i++]);
+			al = ft_strjoin(al, " ");
+		}
+		ab = ft_split(al, ' ');
+		free(al);
+		i = 0;
+		while (ab[i])
+		{
+			ft_lstadd_back(&data.stacka ,ft_lstnew(ft_atoi(ab[i])));
+			data.count++;
+			i++;
+		}
+		free(ab);
 		a = data.stacka;
 		b = data.stacka;
 		l = data.stacka;
@@ -47,12 +61,21 @@ int main(int ac, char **av)
 			while (f->next)
 			{
 				if (l->content == f->next->content)
+				{
+					printf("error");
 					exit(1);
+				}
 				f = f->next;
 			}
 			l = l->next;
 			f = l;
 		}
+		// t_list *h = data.stacka;
+		// while (h)
+		// {
+		// 	printf("%d\n", h->content);
+		// 	h = h->next;
+		// }
 		while (a)
 		{
 			while (b->next)
@@ -65,12 +88,6 @@ int main(int ac, char **av)
 						ft_sort_5number(&data);
 					else if (data.count > 5)
 						ft_sort_5number(&data);
-					// t_list *h = data.stacka;
-					// while (h)
-					// {
-					// 	printf("%d ", h->content);
-					// 	h = h->next;
-					// }
 					exit(0);
 				}
 				b = b->next;

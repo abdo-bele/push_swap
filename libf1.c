@@ -1,5 +1,17 @@
 #include "push_swap.h"
 
+size_t	ft_strlen(const char *c)
+{
+	int	i;
+
+	i = 0;
+	if (!c)
+		return (0);
+	while (c[i])
+		i++;
+	return (i);
+}
+
 t_list	*ft_lstlast(t_list *lst)
 {
 	while (lst && lst->next)
@@ -68,15 +80,14 @@ int	ft_atoi(const char *str)
 			b = b * (-1);
 		i++;
 	}
-	if (str[i] >= '0' && str[i] <= '9')
-	{
+	if (!str[i] && (str[i] < '0' || str[i] > '9'))
+		exit(1);
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		r = r * 10 + (str[i] - '0');
 		i++;
 	}
-	}
-	else
+	if (str[i])
 		exit(1);
 	return (r * b);
 }
@@ -153,4 +164,32 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	ft_chek(s, c, strings, words_count);
 	return (strings);
+}
+
+char	*ft_strjoin(char *s1, char *s2)
+{
+	int		i;
+	int		l;
+	char	*ptr;
+
+	i = 0;
+	l = 0;
+	if (!s1)
+	{
+		s1 = malloc(1);
+		s1[0] = '\0';
+	}
+	if (!s2)
+		return (free(s1), NULL);
+	ptr = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (ptr == NULL)
+		return (NULL);
+	while (s1[i])
+		ptr[l++] = s1[i++];
+	i = 0;
+	while (s2[i])
+		ptr[l++] = s2[i++];
+	ptr[l] = '\0';
+	free(s1);
+	return (ptr);
 }
