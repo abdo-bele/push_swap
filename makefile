@@ -4,6 +4,8 @@ SRC = push_swap.c \
 		move.c \
 		move2.c \
 		libf1.c \
+		libf2.c \
+		libf3.c \
 		ft_sort_3number.c \
 		ft_sort_5number.c \
  

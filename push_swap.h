@@ -36,6 +36,7 @@ void	rrr(t_data *data);
 size_t	ft_strlen(const char *c);
 int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char *str);
+int 	ft_atoi2(const char *str, int i, int b);
 void	ft_check_max(t_data *data);
 void	ft_sort_5number(t_data *data);
 void	ft_sort_3number(t_data *data);
