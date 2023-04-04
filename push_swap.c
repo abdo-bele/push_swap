@@ -28,6 +28,8 @@ int main(int ac, char **av)
 	t_list	*b;
 
 	i = 1;
+	data.stacka = NULL;
+	data.stackb = NULL;
 	data.count = 0;
 	if (ac < 2)
 		return (0);
@@ -51,6 +53,7 @@ int main(int ac, char **av)
 			i++;
 		}
 		free(ab);
+		// ft_intindex(data.stacka);
 		a = data.stacka;
 		b = data.stacka;
 		l = data.stacka;
@@ -73,7 +76,7 @@ int main(int ac, char **av)
 		// t_list *h = data.stacka;
 		// while (h)
 		// {
-		// 	printf("%d\n", h->content);
+		// 	printf("%d--%d\n", h->content, h->index);
 		// 	h = h->next;
 		// }
 		while (a)
@@ -86,8 +89,8 @@ int main(int ac, char **av)
 						ft_sort_3number(&data);
 					else if (data.count <= 5)
 						ft_sort_5number(&data);
-					else if (data.count > 5)
-						ft_sort_5number(&data);
+					else if (data.count <= 100)
+						ft_sort_100number(&data);
 					exit(0);
 				}
 				b = b->next;

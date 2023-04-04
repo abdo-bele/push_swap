@@ -9,6 +9,7 @@
 typedef struct s_list
 {
 	int				content;
+	int				index;
 	struct s_list	*next;
 }					t_list;
 
@@ -20,6 +21,11 @@ typedef struct s_data
 	int		min;
 	int		counta;
 	int		count;
+	int		countpf;
+	int		countps;
+	int		hold_first;
+	int		hold_second;
+	int		chunk;
 }					t_data;
 
 void	ra(t_data *data);
@@ -33,19 +39,23 @@ void	ss(t_data *data);
 void	rrb(t_data *data);
 void	rra(t_data *data);
 void	rrr(t_data *data);
-size_t	ft_strlen(const char *c);
+t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char *str);
-int 	ft_atoi2(const char *str, int i, int b);
+t_list	*ft_lstlast(t_list *lst);
+size_t	ft_strlen(const char *c);
+void    ft_intindex(t_list *data);
 void	ft_check_max(t_data *data);
+void	ft_checknumber(t_data *data);
 void	ft_sort_5number(t_data *data);
 void	ft_sort_3number(t_data *data);
 void	ft_sort_end_push(t_data *data);
+char	*ft_strjoin(char *s1, char *s2);
+void    ft_sort_100number(t_data *data);
+void    ft_check_position(t_data *data);
 char	**ft_split(char const *s, char c);
+int 	ft_atoi2(const char *str, int i, int b);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
-char	*ft_strjoin(char *s1, char *s2);
-t_list	*ft_lstlast(t_list *lst);
-t_list	*ft_lstnew(int content);
 
 #endif

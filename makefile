@@ -6,8 +6,10 @@ SRC = push_swap.c \
 		libf1.c \
 		libf2.c \
 		libf3.c \
+		ft_intindex.c \
 		ft_sort_3number.c \
 		ft_sort_5number.c \
+		ft_sort_100number.c \
  
 
 OBJ = $(SRC:%.c=%.o)
