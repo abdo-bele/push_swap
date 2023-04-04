@@ -91,6 +91,8 @@ int main(int ac, char **av)
 						ft_sort_5number(&data);
 					else if (data.count <= 100)
 						ft_sort_100number(&data);
+					else if (data.count <= 500)
+						ft_sort_100number(&data);
 					exit(0);
 				}
 				b = b->next;
@@ -100,3 +102,4 @@ int main(int ac, char **av)
 		}
 	}
 }
+ 
