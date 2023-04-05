@@ -124,7 +124,7 @@ int main(int ac, char **av)
 						ft_sort_3number(&data);
 					else if (data.count <= 5)
 						ft_sort_5number(&data);
-					else if (data.count <= 100)
+					else if (data.count > 5)
 					{	
 						while (data.stacka)
 						{
@@ -137,12 +137,13 @@ int main(int ac, char **av)
 							ft_check_maxb(&data);
 							ft_sort_end_pusha(&data);
 						}
-						t_list *d = data.stacka;
-						while (d)
-						{
-							printf("%d\n", d->content);
-							d = d->next;
-						}
+						// t_list *d = data.stacka;
+						// while (d)
+						// {
+						// 	printf("%d\n", d->content);
+						// 	d = d->next;
+						// }
+						
 					}
 					exit(0);
 				}
