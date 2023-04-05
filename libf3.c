@@ -23,8 +23,11 @@ int ft_atoi2(const char *str, int i, int b)
 		i++;
 	}
 	if (str[i] || (r > 2147483647 && b == 1) || (r > 2147483648 && b == -1))
+	{
+		ft_putstr("error");
 		exit(1);
-    return (r);
+	}
+	return (r);
 }
 
 int	ft_atoi(const char *str)
@@ -47,4 +50,17 @@ int	ft_atoi(const char *str)
 	}
     r = ft_atoi2(str, i , b);
 	return (r * b);
+}
+
+void	ft_putstr(char *str)
+{
+	int i;
+
+	i = 0;
+	while(str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	write(1, "\n", 1);
 }

@@ -12,7 +12,7 @@ void	ft_check(char *av)
 			return ;
 		i++;
 	}
-	printf("error");
+	ft_putstr("error");
 	exit(1);
 }
 
@@ -32,7 +32,6 @@ void	ft_sort_end_pusha(t_data *data)
 			{
 			while (i > 0)
 			{
-				printf("rb\n");
 				rb(data);
 				i--;
 			}
@@ -41,7 +40,6 @@ void	ft_sort_end_pusha(t_data *data)
 			{
 			while (data->countb - i > 0)
 			{
-				printf("rrb\n");
 				rrb(data);
 				i++;
 			}
@@ -50,7 +48,6 @@ void	ft_sort_end_pusha(t_data *data)
 		test = test->next;
 		i++;
 	}
-	printf("pa\n");
 	pa(data);
 }
 
@@ -102,7 +99,7 @@ int main(int ac, char **av)
 			{
 				if (l->content == f->next->content)
 				{
-					printf("error");
+					ft_putstr("error");
 					exit(1);
 				}
 				f = f->next;
@@ -137,14 +134,13 @@ int main(int ac, char **av)
 							ft_check_maxb(&data);
 							ft_sort_end_pusha(&data);
 						}
+					}
 						// t_list *d = data.stacka;
 						// while (d)
 						// {
 						// 	printf("%d\n", d->content);
 						// 	d = d->next;
 						// }
-						
-					}
 					exit(0);
 				}
 				b = b->next;

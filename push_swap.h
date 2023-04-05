@@ -41,6 +41,7 @@ void	ss(t_data *data);
 void	rrb(t_data *data);
 void	rra(t_data *data);
 void	rrr(t_data *data);
+void	ft_putstr(char *str);
 void    get_chunk(t_data *data);
 t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);

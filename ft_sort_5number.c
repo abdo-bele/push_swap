@@ -13,7 +13,6 @@ void	ft_sort_end_push(t_data *data)
 		{
 			while (i > 0)
 			{
-				printf("ra\n");
 				ra(data);
 				i--;
 			}
@@ -21,7 +20,6 @@ void	ft_sort_end_push(t_data *data)
 		test = test->next;
 		i++;
 	}
-	printf("pb\n");
 	pb(data);
 }
 
@@ -37,25 +35,9 @@ void	ft_sort_5number(t_data *data)
 	ft_sort_3number(data);
 	while(data->stackb)
 	{
-		printf("pa\n");
-		printf("ra\n");
 		pa(data);
 		ra(data);
 	}
-// 	printf("%d\n", data->stacka->content);
-// 	printf("%d\n", data->stacka->next->content);
-// 	printf("%d\n", data->stacka->next->next->content);
-// 	printf("%d\n", data->stacka->next->next->next->content);
-// 	printf("%d\n", data->stacka->next->next->next->next->content);
-// 	printf("%d\n", data->stacka->next->next->next->next->next->content);
-// 	printf("%d\n", data->stacka->next->next->next->next->next->next->content);
- 	// printf("%d\n", data->stackb->content);
-	// t_list *h = data->stacka;
-	// while (h)
-	// {
-	// 	printf("%d ", h->content);
-	// 	h = h->next;
-	// }
 }
 
 void	ft_check_max(t_data *data)

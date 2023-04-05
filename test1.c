@@ -216,3 +216,63 @@ int main(int ac, char **av)
 	// 	printf("%d\n", d->content);
 	// 	d = d->next;
 	// }
+
+
+	
+// void    ft_check_position(t_data *data)
+// {
+//     t_list	*a;
+
+// 	a = data->stacka;
+//     while (a)
+// 	{
+// 		if (a->content == data->hold_first)
+// 			break;
+// 		a = a->next;
+//         data->countpf++;
+// 	}
+// 	a = data->stacka;
+//     while (a)
+// 	{
+// 		if (a->content == data->hold_second)
+// 			break;
+// 		a = a->next;
+//         data->countps++;
+// 	}
+// }
+
+// void	ft_checknumber(t_data *data)
+// {
+// 	t_list	*a;
+
+//     data->countpf = 0;
+//     data->countps = 0;
+//     data->countpf = 0;
+//     data->countps = 0;
+//     data->hold_first = 0;
+//     data->hold_second = 0;
+
+// 	data->hold_first = data->stacka->index;
+// 	data->hold_second = data->stacka->index;
+// 	a = data->stacka;
+// 	while (a)
+// 	{
+// 		if (a->index < data->hold_first)
+// 			data->hold_first = a->index;
+// 		a = a->next;
+// 	}
+// 	a = data->stacka;
+// 	while (a)
+// 	{
+// 		if (a->index < data->hold_second && a->index > data->hold_first)
+// 			data->hold_second = a->index;
+// 		a = a->next;
+// 	}
+//     ft_check_position(data);
+//     // printf("--%d\n", data->hold_first);
+//     // printf("--%d\n", data->hold_second);
+//     // printf("f%d\n", data->countpf); 
+//     // printf("s%d\n", data->countps);
+//     // printf("%d\n", data->count);
+//     // printf("%d\n", data->counta);
+// }
