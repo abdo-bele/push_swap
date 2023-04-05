@@ -97,3 +97,122 @@ int main(int ac, char **av)
 		}
 	}
 }
+
+
+
+
+
+    // printf("\n");
+//    t_list *d = data->stackb;
+// 	while (d)
+// 	{
+// 		printf("%d\n", d->content);
+// 		d = d->next;
+// 	}
+    // data->counta = data->count;
+    // while (h && data->count > 0)
+    // {
+    //     ft_checknumber(data);
+    //     // t_list *d = data->stacka;
+	// 	// while (d)
+	// 	// {
+	// 	// 	printf("%d\n", d->content);
+	// 	// 	d = d->next;
+	// 	// }
+    //     // printf("--a%d\n", data->hold_first);
+    //     // printf("--b%d\n", data->hold_second);
+    //     // printf("===f%d\n", data->countpf);
+    //     // printf("===s%d\n", data->countps);
+    //     if (data->countpf > data->countps)
+    //     {
+    //         // printf("bhabcha");
+    //         while (h && data->countps > 0)
+    //         {
+    //             printf("ra\n");
+    //             ra(data);
+    //             data->countps--;
+    //         }
+    //         // break;
+    //     }
+    //     else if (data->countpf <= (data->count - (data->countps + 1)))
+    //     {
+    //         while (h && data->countpf > 0)
+    //         {
+    //             printf("ra\n");
+    //             ra(data);
+    //             data->countpf--;
+    //         }
+    //     }
+    //     else if (data->countpf > (data->count - (data->countps + 1)))
+    //     {
+    //         if (data->countps < (data->count/2))
+    //         {
+    //             while (h && data->count - data->countps > 0)
+    //             {
+    //                 printf("ra\n");
+    //                 ra(data);
+    //                 data->countps++;
+    //             }   
+    //         }
+    //         else if (data->countps > (data->count/2))
+    //         {
+    //             while (h && data->count - data->countps > 0)
+    //             {
+    //                 printf("rra\n");
+    //                 rra(data);
+    //                 data->countps++;
+    //             } 
+    //         }
+    //     }
+    //     printf("pb\n");
+    //     pb(data);
+    //     data->count--;
+    // }
+    // while (data->stackb)
+    // {
+    // ft_check_maxb(data);
+    // t_list	*test;
+	// int		i;
+	// int		a;
+
+	// test = data->stackb;
+	// i = 0;
+	// while (test)
+	// {
+    //     // printf("----------%d\n", data->max);
+	// 	if (test->content == data->max)
+	// 	{
+    //         a = ft_lstsize(test);
+    //         // printf("aaaaaa%d\n",a);
+    //         // printf("iiiiii%d\n",i);
+    //         if (i <= (a / 2))
+    //         {
+	// 		while (i > 0)
+	// 		{
+	// 			printf("rb\n");
+	// 			rb(data);
+	// 			i--;
+	// 		}
+    //         }
+    //         else if (i > (a / 2))
+    //         {
+    //             while (a - i > 0)
+    //             {
+    //                 printf("rrb\n");
+	// 			    rrb(data);
+	// 			    i--;
+    //             } 
+    //         }
+	// 	}
+	// 	test = test->next;
+	// 	i++;
+	// }
+	// printf("pa\n");
+	// pa(data);
+    // }
+    // t_list *d = data->stacka;
+	// while (d)
+	// {
+	// 	printf("%d\n", d->content);
+	// 	d = d->next;
+	// }

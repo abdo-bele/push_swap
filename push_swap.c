@@ -16,6 +16,44 @@ void	ft_check(char *av)
 	exit(1);
 }
 
+void	ft_sort_end_pusha(t_data *data)
+{
+	t_list	*test;
+	int		i;
+
+	test = data->stackb;
+	i = 0;
+	data->countb = ft_lstsize(data->stackb);
+	while (test)
+	{
+		if (test->content == data->max)
+		{
+			if (i <= data->countb / 2)
+			{
+			while (i > 0)
+			{
+				printf("rb\n");
+				rb(data);
+				i--;
+			}
+			}
+			if (i > data->countb / 2)
+			{
+			while (data->countb - i > 0)
+			{
+				printf("rrb\n");
+				rrb(data);
+				i++;
+			}
+			}
+		}
+		test = test->next;
+		i++;
+	}
+	printf("pa\n");
+	pa(data);
+}
+
 int main(int ac, char **av)
 {
     t_data	data;
@@ -53,7 +91,6 @@ int main(int ac, char **av)
 			i++;
 		}
 		free(ab);
-		// ft_intindex(data.stacka);
 		a = data.stacka;
 		b = data.stacka;
 		l = data.stacka;
@@ -73,12 +110,10 @@ int main(int ac, char **av)
 			l = l->next;
 			f = l;
 		}
-		// t_list *h = data.stacka;
-		// while (h)
-		// {
-		// 	printf("%d--%d\n", h->content, h->index);
-		// 	h = h->next;
-		// }
+		ft_intindex(data.stacka);
+    	ft_indexstacka(&data);
+    	get_chunk(&data);
+		data.index = data.chunk;
 		while (a)
 		{
 			while (b->next)
@@ -90,9 +125,25 @@ int main(int ac, char **av)
 					else if (data.count <= 5)
 						ft_sort_5number(&data);
 					else if (data.count <= 100)
-						ft_sort_100number(&data);
-					else if (data.count <= 500)
-						ft_sort_100number(&data);
+					{	
+						while (data.stacka)
+						{
+							if (data.index > data.count)
+								data.index = data.count;
+							ft_sort_100number(&data);
+						}
+						while (data.stackb)
+						{
+							ft_check_maxb(&data);
+							ft_sort_end_pusha(&data);
+						}
+						t_list *d = data.stacka;
+						while (d)
+						{
+							printf("%d\n", d->content);
+							d = d->next;
+						}
+					}
 					exit(0);
 				}
 				b = b->next;

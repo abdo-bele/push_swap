@@ -24,14 +24,20 @@ void    ft_indexstacka(t_data *data)
         tmp1->index = min;
         tmp1 = tmp1->next;
     }
-    t_list *d = data->stacka;
-    while (d)
-    {
-		printf("%d--%d\n", d->content, d->index);
-		d = d->next;
-	}
-        
-    
+}
+
+void    get_chunk(t_data *data)
+{
+
+	data->count = ft_lstsize(data->stacka);
+	if (data->count <= 20)
+		data->chunk = data->count / 2;
+	else if (data->count <= 200)
+		data->chunk = data->count / 5;
+	else if (data->count <= 500)
+		data->chunk = data->count / 8;
+	else
+		data->chunk = data->count / 15;
 }
 
 void	ft_check_maxb(t_data *data)
@@ -98,8 +104,8 @@ void	ft_checknumber(t_data *data)
 		a = a->next;
 	}
     ft_check_position(data);
-    printf("--%d\n", data->hold_first);
-    printf("--%d\n", data->hold_second);
+    // printf("--%d\n", data->hold_first);
+    // printf("--%d\n", data->hold_second);
     // printf("f%d\n", data->countpf); 
     // printf("s%d\n", data->countps);
     // printf("%d\n", data->count);
@@ -108,156 +114,24 @@ void	ft_checknumber(t_data *data)
 
 void    ft_sort_100number(t_data *data)
 {
-    t_list *h;
-    int     index;
-
-    ft_intindex(data->stacka);
-    ft_indexstacka(data);
-    t_list *d = data->stacka;
-    while (d)
-    {
-		printf("%d--%d\n", d->content, d->index);
-		d = d->next;
-	}
-    h = data->stacka;
-    index = 19;
-    while (h)
-    {
-        while (h && h->index > index)
+        while (data->stacka->index >= data->index)
         {
             printf("ra\n");
             ra(data);
         }
-        if (h->index < index / 2)
+        if (data->stacka->index <= data->index - (data->chunk / 2))
         {
-            printf("%d",h->index);
             printf("pb\n");
-            puts("bbbbbb");
             pb(data);
         }
-        else if(h->index > index / 2)
+        else if(data->stacka->index > data->index  - (data->chunk / 2))
         {
             printf("pb\n");
             pb(data);
-            puts("her");
             printf("rb\n");
             rb(data);
         }
-        if (ft_lstsize(data->stackb) == index)
-            index = index + 20;
-        puts("aaaaaa");
-    }
-    // t_list *d = data->stacka;
-	// while (d)
-	// {
-	// 	printf("%d\n", d->content);
-	// 	d = d->next;
-	// }
-    // data->counta = data->count;
-    // while (h && data->count > 0)
-    // {
-    //     ft_checknumber(data);
-    //     // t_list *d = data->stacka;
-	// 	// while (d)
-	// 	// {
-	// 	// 	printf("%d\n", d->content);
-	// 	// 	d = d->next;
-	// 	// }
-    //     // printf("--a%d\n", data->hold_first);
-    //     // printf("--b%d\n", data->hold_second);
-    //     // printf("===f%d\n", data->countpf);
-    //     // printf("===s%d\n", data->countps);
-    //     if (data->countpf > data->countps)
-    //     {
-    //         // printf("bhabcha");
-    //         while (h && data->countps > 0)
-    //         {
-    //             printf("ra\n");
-    //             ra(data);
-    //             data->countps--;
-    //         }
-    //         // break;
-    //     }
-    //     else if (data->countpf <= (data->count - (data->countps + 1)))
-    //     {
-    //         while (h && data->countpf > 0)
-    //         {
-    //             printf("ra\n");
-    //             ra(data);
-    //             data->countpf--;
-    //         }
-    //     }
-    //     else if (data->countpf > (data->count - (data->countps + 1)))
-    //     {
-    //         if (data->countps < (data->count/2))
-    //         {
-    //             while (h && data->count - data->countps > 0)
-    //             {
-    //                 printf("ra\n");
-    //                 ra(data);
-    //                 data->countps++;
-    //             }   
-    //         }
-    //         else if (data->countps > (data->count/2))
-    //         {
-    //             while (h && data->count - data->countps > 0)
-    //             {
-    //                 printf("rra\n");
-    //                 rra(data);
-    //                 data->countps++;
-    //             } 
-    //         }
-    //     }
-    //     printf("pb\n");
-    //     pb(data);
-    //     data->count--;
-    // }
-    // while (data->stackb)
-    // {
-    // ft_check_maxb(data);
-    // t_list	*test;
-	// int		i;
-	// int		a;
+        if (ft_lstsize(data->stackb) == data->index)
+            data->index = data->index + data->chunk;
 
-	// test = data->stackb;
-	// i = 0;
-	// while (test)
-	// {
-    //     // printf("----------%d\n", data->max);
-	// 	if (test->content == data->max)
-	// 	{
-    //         a = ft_lstsize(test);
-    //         // printf("aaaaaa%d\n",a);
-    //         // printf("iiiiii%d\n",i);
-    //         if (i <= (a / 2))
-    //         {
-	// 		while (i > 0)
-	// 		{
-	// 			printf("rb\n");
-	// 			rb(data);
-	// 			i--;
-	// 		}
-    //         }
-    //         else if (i > (a / 2))
-    //         {
-    //             while (a - i > 0)
-    //             {
-    //                 printf("rrb\n");
-	// 			    rrb(data);
-	// 			    i--;
-    //             } 
-    //         }
-	// 	}
-	// 	test = test->next;
-	// 	i++;
-	// }
-	// printf("pa\n");
-	// pa(data);
-    // }
-    // t_list *d = data->stacka;
-	// while (d)
-	// {
-	// 	printf("%d\n", d->content);
-	// 	d = d->next;
-	// }
 }
