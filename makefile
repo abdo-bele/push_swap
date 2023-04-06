@@ -52,6 +52,6 @@ clean:
 	@rm -rf $(OBJ) $(OBJB)
 
 fclean: clean
-	@rm -rf $(NAME)
+	@rm -rf $(NAME) $(NAMEB)
 
 re: fclean all

@@ -65,5 +65,6 @@ int 	ft_atoi2(const char *str, int i, int b);
 int		ft_strcmp(const char *a, const char *b);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
+int	ft_strncmp(const char *a, const char *b, size_t n);
 
 #endif

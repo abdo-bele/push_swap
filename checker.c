@@ -1,4 +1,5 @@
 #include "push_swap.h"
+#include <string.h>
 
 void	ft_check(char *av)
 {
@@ -39,27 +40,27 @@ int ft_is_sorted(t_data *data)
 
 int	ft_check_operation(char *str, t_data *data)
 {
-	if(ft_strcmp(str, "pa"))
+	if(ft_strncmp(str, "pa", 2) == 0)
 		return (pa(data), 1);
-	else if(ft_strcmp(str, "pb"))
+	else if(ft_strncmp(str, "pb", 2) == 0)
 		return (pb(data), 1);
-	else if(ft_strcmp(str, "ra"))
+	else if(ft_strncmp(str, "ra", 2) == 0)
 		return (ra(data), 1);
-	else if(ft_strcmp(str, "rra"))
+	else if(ft_strncmp(str, "rra", 3) == 0)
 		return (rra(data), 1);
-	else if(ft_strcmp(str, "sa"))
+	else if(ft_strncmp(str, "sa", 2) == 0)
 		return (sa(data), 1);
-	else if(ft_strcmp(str, "sb"))
+	else if(ft_strncmp(str, "sb", 2) == 0)
 		return (sb(data), 1);
-	else if(ft_strcmp(str, "rb"))
+	else if(ft_strncmp(str, "rb", 2) == 0)
 		return (rb(data), 1);
-	else if(ft_strcmp(str, "rrb"))
+	else if(ft_strncmp(str, "rrb", 3) == 0)
 		return (rrb(data), 1);
-	else if(ft_strcmp(str, "rr"))
+	else if(ft_strncmp(str, "rr", 2) == 0)
 		return (rr(data), 1);
-	else if(ft_strcmp(str, "ss"))
+	else if(ft_strncmp(str, "ss", 2) == 0)
 		return (ss(data), 1);
-	else if(ft_strcmp(str, "rrr"))
+	else if(ft_strncmp(str, "rrr", 3) == 0)
 		return (rrr(data), 1);
 	else
 		return (ft_putstr("Error"), 0);
@@ -108,13 +109,12 @@ int main(int ac, char **av)
 		if(!ft_is_sorted(&data))
 		{
 			str = get_next_line(0);
+			if (!str)
+				return 1;
 			while(str)
-			{	
+			{
 				if(!ft_check_operation(str, &data))
-				{
-					ft_putstr("error");
 					exit(1);
-				}
 				free(str);
 				str = get_next_line(0);
 			}
