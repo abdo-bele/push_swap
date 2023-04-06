@@ -99,18 +99,8 @@ int main(int ac, char **av)
 			data.count++;
 			i++;
 		}
-		// free(ab);
-		// t_list *d = data.stacka;
-		// 				while (d)
-		// 				{
-		// 					printf("%d\n", d->content);
-		// 					d = d->next;
-		// 				}
-		if(!ft_is_sorted(&data))
-		{
+		free(ab);
 			str = get_next_line(0);
-			if (!str)
-				return 1;
 			while(str)
 			{
 				if(!ft_check_operation(str, &data))
@@ -118,8 +108,6 @@ int main(int ac, char **av)
 				free(str);
 				str = get_next_line(0);
 			}
-			
-		}
 		if (ft_is_sorted(&data))
 		{
 			ft_putstr("OK");
