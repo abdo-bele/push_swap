@@ -1,16 +1,16 @@
 #include "push_swap.h"
 
-size_t	ft_strlen(const char *c)
-{
-	int	i;
+// size_t	ft_strlen(const char *c)
+// {
+// 	int	i;
 
-	i = 0;
-	if (!c)
-		return (0);
-	while (c[i])
-		i++;
-	return (i);
-}
+// 	i = 0;
+// 	if (!c)
+// 		return (0);
+// 	while (c[i])
+// 		i++;
+// 	return (i);
+// }
 
 int ft_atoi2(const char *str, int i, int b)
 {
@@ -63,4 +63,23 @@ void	ft_putstr(char *str)
 		i++;
 	}
 	write(1, "\n", 1);
+}
+
+int	ft_strcmp(const char *a, const char *b)
+{
+	unsigned char	*s1;
+	unsigned char	*s2;
+	size_t			i;
+
+	i = 0;
+	s1 = (unsigned char *)a;
+	s2 = (unsigned char *)b;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	if ((s1[i] - s2[i]) == 0)
+		return (0);
+	else if ((s1[i] - s2[i]) > 0)
+		return (1);
+	else
+		return (-1);
 }
