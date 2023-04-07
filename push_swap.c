@@ -120,7 +120,9 @@ int main(int ac, char **av)
 					if (data.count <= 3)
 						ft_sort_3number(&data);
 					else if (data.count <= 5)
+					{
 						ft_sort_5number(&data);
+					}
 					else if (data.count > 5)
 					{	
 						while (data.stacka)

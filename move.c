@@ -54,7 +54,7 @@ void	pa(t_data *data)
 	t_list	*a;
 	t_list	*b;
 
-	if(!data->stackb->next || !data->stackb)
+	if(!data->stackb)
 		return ;
 	b = data->stackb->next;
 	a = data->stackb;
@@ -68,7 +68,7 @@ void	pb(t_data *data)
 	t_list	*a;
 	t_list	*b;
 
-	if(!data->stacka->next || !data->stacka)
+	if(!data->stacka)
 		return ;
 	a = data->stacka->next;
 	b = data->stacka;

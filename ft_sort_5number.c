@@ -13,6 +13,7 @@ void	ft_sort_end_push(t_data *data)
 		{
 			while (i > 0)
 			{
+				printf("ra\n");
 				ra(data);
 				i--;
 			}
