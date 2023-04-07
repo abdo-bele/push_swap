@@ -11,11 +11,15 @@ void	ft_sort_end_push(t_data *data)
 	{
 		if (test->content == data->max)
 		{
-			while (i > 0)
+			if (i <= 2)
 			{
-				printf("ra\n");
-				ra(data);
-				i--;
+				while (i-- > 0)
+					ra(data);
+			}
+			else
+			{
+				while (i++ < data->counta)
+					rra(data);
 			}
 		}
 		test = test->next;
@@ -34,7 +38,7 @@ void	ft_sort_5number(t_data *data)
 		data->counta--;
 	}
 	ft_sort_3number(data);
-	while(data->stackb)
+	while (data->stackb)
 	{
 		pa(data);
 		ra(data);

@@ -15,7 +15,6 @@ void	rb(t_data *data)
 	r->next = NULL;
 	l->next = r;
 	data->stackb = f;
-	ft_putstr("rb");
 }
 
 void	sb(t_data *data)
@@ -27,7 +26,6 @@ void	sb(t_data *data)
 	a = data->stackb->content;
 	data->stackb->content = data->stackb->next->content;
 	data->stackb->next->content = a;
-	ft_putstr("sb");
 }
 
 void	rrb(t_data *data)
@@ -46,5 +44,4 @@ void	rrb(t_data *data)
 	l->next = NULL;
 	rr->next = f;
 	data->stackb = rr;
-	ft_putstr("rrb");
 }

@@ -4,7 +4,6 @@ void	ft_check(char *av)
 {
 	int i;
 
-	// i = ft_strlen(av);
 	i = 0;
 	while (av[i])
 	{
@@ -30,19 +29,13 @@ void	ft_sort_end_pusha(t_data *data)
 		{
 			if (i <= data->countb / 2)
 			{
-			while (i > 0)
-			{
+			while (i-- > 0)
 				rb(data);
-				i--;
 			}
-			}
-			if (i > data->countb / 2)
+			else if (i > data->countb / 2)
 			{
-			while (data->countb - i > 0)
-			{
+			while (data->countb - i++ > 0)
 				rrb(data);
-				i++;
-			}
 			}
 		}
 		test = test->next;

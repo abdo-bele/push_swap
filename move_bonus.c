@@ -15,7 +15,6 @@ void	ra(t_data *data)
 	r->next = NULL;
 	l->next = r;
 	data->stacka = f;
-	ft_putstr("ra");
 }
 
 void	sa(t_data *data)
@@ -27,7 +26,6 @@ void	sa(t_data *data)
 	a = data->stacka->content;
 	data->stacka->content = data->stacka->next->content;
 	data->stacka->next->content = a;
-	ft_putstr("sa");
 }
 
 void	rra(t_data *data)
@@ -46,7 +44,6 @@ void	rra(t_data *data)
 	l->next = NULL;
 	rr->next = f;
 	data->stacka = rr;
-	ft_putstr("rra");
 }
 
 void	pa(t_data *data)
@@ -60,7 +57,6 @@ void	pa(t_data *data)
 	a = data->stackb;
 	data->stackb = b;
 	ft_lstadd_front(&data->stacka, a);
-	ft_putstr("pa");
 }
 
 void	pb(t_data *data)
@@ -74,5 +70,4 @@ void	pb(t_data *data)
 	b = data->stacka;
 	data->stacka = a;
 	ft_lstadd_front(&data->stackb, b);
-	ft_putstr("pb");
 }

@@ -1,22 +1,10 @@
 #include "push_swap.h"
 
-size_t	ft_strlen(const char *c)
+int	ft_atoi2(const char *str, int i, int b)
 {
-	int	i;
+	long	r;
 
-	i = 0;
-	if (!c)
-		return (0);
-	while (c[i])
-		i++;
-	return (i);
-}
-
-int ft_atoi2(const char *str, int i, int b)
-{
-    long    r;
-
-    r = 0;
+	r = 0;
 	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
 		r = r * 10 + (str[i] - '0');
@@ -48,59 +36,19 @@ int	ft_atoi(const char *str)
 			b = b * (-1);
 		i++;
 	}
-    r = ft_atoi2(str, i , b);
+	r = ft_atoi2(str, i, b);
 	return (r * b);
 }
 
 void	ft_putstr(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		write(1, &str[i], 1);
 		i++;
 	}
 	write(1, "\n", 1);
-}
-
-int	ft_strcmp(const char *a, const char *b)
-{
-	unsigned char	*s1;
-	unsigned char	*s2;
-	size_t			i;
-
-	i = 0;
-	s1 = (unsigned char *)a;
-	s2 = (unsigned char *)b;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
-		i++;
-	if ((s1[i] - s2[i]) == 0)
-		return (0);
-	else if ((s1[i] - s2[i]) > 0)
-		return (1);
-	else
-		return (-1);
-}
-
-int	ft_strncmp(const char *a, const char *b, size_t n)
-{
-	unsigned char	*s1;
-	unsigned char	*s2;
-	size_t			i;
-
-	i = 0;
-	s1 = (unsigned char *)a;
-	s2 = (unsigned char *)b;
-	if (n == 0)
-		return (0);
-	while (s1[i] && s2[i] && i < (n - 1) && s1[i] == s2[i])
-		i++;
-	if ((s1[i] - s2[i]) == 0)
-		return (0);
-	else if ((s1[i] - s2[i]) > 0)
-		return (1);
-	else
-		return (-1);
 }

@@ -74,30 +74,23 @@ char	**ft_split(char const *s, char c)
 	return (strings);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+int	ft_strncmp(const char *a, const char *b, size_t n)
 {
-	int		i;
-	int		l;
-	char	*ptr;
+	unsigned char	*s1;
+	unsigned char	*s2;
+	size_t			i;
 
 	i = 0;
-	l = 0;
-	if (!s1)
-	{
-		s1 = malloc(1);
-		s1[0] = '\0';
-	}
-	if (!s2)
-		return (free(s1), NULL);
-	ptr = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (ptr == NULL)
-		return (NULL);
-	while (s1[i])
-		ptr[l++] = s1[i++];
-	i = 0;
-	while (s2[i])
-		ptr[l++] = s2[i++];
-	ptr[l] = '\0';
-	free(s1);
-	return (ptr);
+	s1 = (unsigned char *)a;
+	s2 = (unsigned char *)b;
+	if (n == 0)
+		return (0);
+	while (s1[i] && s2[i] && i < (n - 1) && s1[i] == s2[i])
+		i++;
+	if ((s1[i] - s2[i]) == 0)
+		return (0);
+	else if ((s1[i] - s2[i]) > 0)
+		return (1);
+	else
+		return (-1);
 }
