@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_intindex.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/08 18:34:47 by aarchtou          #+#    #+#             */
+/*   Updated: 2023/04/08 18:34:48 by aarchtou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_intindex(t_list *data)
@@ -37,14 +49,14 @@ void	ft_chek_dup(t_data *data)
 
 void	ft_get_stacka(t_data *data, char **av)
 {
-    char	**ab;
-    char	*al;
+	char	**ab;
+	char	*al;
 	int		i;
 
 	i = 1;
 	al = malloc(1);
 	al[0] = '\0';
-	while(av[i])
+	while (av[i])
 	{
 		ft_check(av[i]);
 		al = ft_strjoin(al, av[i++]);
@@ -55,7 +67,7 @@ void	ft_get_stacka(t_data *data, char **av)
 	i = 0;
 	while (ab[i])
 	{
-		ft_lstadd_back(&data->stacka ,ft_lstnew(ft_atoi(ab[i])));
+		ft_lstadd_back(&data->stacka, ft_lstnew(ft_atoi(ab[i])));
 		data->count++;
 		i++;
 	}

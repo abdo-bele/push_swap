@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/08 18:35:40 by aarchtou          #+#    #+#             */
+/*   Updated: 2023/04/08 18:35:41 by aarchtou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -43,6 +55,7 @@ void	rra(t_data *data);
 void	rrr(t_data *data);
 void	ft_check(char *av);
 void	ft_putstr(char *str);
+void	ft_sort(t_data *data);
 void	get_chunk(t_data *data);
 t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
@@ -52,6 +65,7 @@ size_t	ft_strlen(const char *c);
 void	ft_intindex(t_list *data);
 void	ft_chek_dup(t_data *data);
 void	ft_check_max(t_data *data);
+void	ft_sortnumber(t_data *data);
 void	ft_check_maxb(t_data *data);
 void	ft_checknumber(t_data *data);
 void	ft_indexstacka(t_data *data);
