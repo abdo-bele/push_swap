@@ -21,6 +21,7 @@ SRCB = checker.c \
 		libf1.c \
 		libf2.c \
 		libf3.c \
+		ft_intindex.c \
 		get_next_line/get_next_line.c \
 		get_next_line/get_next_line_utils.c \
  

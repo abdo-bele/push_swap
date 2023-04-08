@@ -67,38 +67,18 @@ int	ft_check_operation(char *str, t_data *data)
 int	main(int ac, char **av)
 {
 	t_data	data;
-	char	**ab;
-	char	*al;
-	int		i;
 	char	*str;
 
-	i = 1;
 	data.stacka = NULL;
 	data.stackb = NULL;
 	data.count = 0;
 	if (ac < 2)
-		return (0);
+		return (ft_putstr("Error"), 1);
 	if (ac > 1)
 	{
-		al = malloc(1);
-		al[0] = '\0';
-		while (av[i])
-		{
-			ft_check(av[i]);
-			al = ft_strjoin(al, av[i++]);
-			al = ft_strjoin(al, " ");
-		}
-		ab = ft_split(al, ' ');
-		free(al);
-		i = 0;
-		while (ab[i])
-		{
-			ft_lstadd_back(&data.stacka, ft_lstnew(ft_atoi(ab[i])));
-			data.count++;
-			i++;
-		}
-		free(ab);
-			str = get_next_line(0);
+		ft_get_stacka(&data, av);
+		ft_chek_dup(&data);
+		str = get_next_line(0);
 		while (str)
 		{
 			if (!ft_check_operation(str, &data))
@@ -107,13 +87,8 @@ int	main(int ac, char **av)
 			str = get_next_line(0);
 		}
 		if (ft_is_sorted(&data))
-		{
 			ft_putstr("OK");
-		}
 		else
-		{
-			ft_putstr("KO");
-			exit(1);
-		}
+			return (ft_putstr("KO"), exit(1), 1);
 	}
 }
