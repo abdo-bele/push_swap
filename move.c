@@ -6,13 +6,13 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:35:15 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/08 18:35:16 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:34:36 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_data *data)
+void	ra(t_data *data, int i)
 {
 	t_list	*f;
 	t_list	*r;
@@ -27,10 +27,11 @@ void	ra(t_data *data)
 	r->next = NULL;
 	l->next = r;
 	data->stacka = f;
-	ft_putstr("ra");
+	if (i == 1)
+		ft_putstr("ra");
 }
 
-void	sa(t_data *data)
+void	sa(t_data *data, int i)
 {
 	int	a;
 
@@ -39,10 +40,11 @@ void	sa(t_data *data)
 	a = data->stacka->content;
 	data->stacka->content = data->stacka->next->content;
 	data->stacka->next->content = a;
-	ft_putstr("sa");
+	if (i == 1)
+		ft_putstr("sa");
 }
 
-void	rra(t_data *data)
+void	rra(t_data *data, int i)
 {
 	t_list	*f;
 	t_list	*rr;
@@ -58,10 +60,11 @@ void	rra(t_data *data)
 	l->next = NULL;
 	rr->next = f;
 	data->stacka = rr;
-	ft_putstr("rra");
+	if (i == 1)
+		ft_putstr("rra");
 }
 
-void	pa(t_data *data)
+void	pa(t_data *data, int i)
 {
 	t_list	*a;
 	t_list	*b;
@@ -72,10 +75,11 @@ void	pa(t_data *data)
 	a = data->stackb;
 	data->stackb = b;
 	ft_lstadd_front(&data->stacka, a);
-	ft_putstr("pa");
+	if (i == 1)
+		ft_putstr("pa");
 }
 
-void	pb(t_data *data)
+void	pb(t_data *data, int i)
 {
 	t_list	*a;
 	t_list	*b;
@@ -86,5 +90,6 @@ void	pb(t_data *data)
 	b = data->stacka;
 	data->stacka = a;
 	ft_lstadd_front(&data->stackb, b);
-	ft_putstr("pb");
+	if (i == 1)
+		ft_putstr("pb");
 }

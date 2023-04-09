@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:35:40 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/09 14:59:17 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:38:21 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,16 @@ typedef struct s_data
 	int		chunk;
 }					t_data;
 
-void	ra(t_data *data);
-void	pb(t_data *data);
-void	pa(t_data *data);
-void	sb(t_data *data);
-void	rb(t_data *data);
-void	sa(t_data *data);
+void	ra(t_data *data, int i);
+void	pb(t_data *data, int i);
+void	pa(t_data *data, int i);
+void	sb(t_data *data, int i);
+void	rb(t_data *data, int i);
+void	sa(t_data *data, int i);
+void	rrb(t_data *data, int i);
+void	rra(t_data *data, int i);
 void	rr(t_data *data);
 void	ss(t_data *data);
-void	rrb(t_data *data);
-void	rra(t_data *data);
 void	rrr(t_data *data);
 void	ft_check(char *av);
 void	ft_free(char **ab);

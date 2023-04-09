@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:34:50 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/08 18:34:51 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:32:30 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,28 @@
 void	ft_sort_3number(t_data *data)
 {
 	if (data->count == 2)
-		sa(data);
+		sa(data, 1);
 	else if (data->stacka->content > data->stacka->next->content
 		&& data->stacka->next->content < data->stacka->next->next->content
 		&& data->stacka->content > data->stacka->next->next->content)
-		ra(data);
+		ra(data, 1);
 	else if (data->stacka->content < data->stacka->next->content
 		&& data->stacka->next->content > data->stacka->next->next->content
 		&& data->stacka->content < data->stacka->next->next->content)
 	{
-		rra(data);
-		sa(data);
+		rra(data, 1);
+		sa(data, 1);
 	}
 	else if (data->stacka->content > data->stacka->next->content
 		&& data->stacka->next->content < data->stacka->next->next->content)
-		sa(data);
+		sa(data, 1);
 	else if (data->stacka->content < data->stacka->next->content
 		&& data->stacka->next->content > data->stacka->next->next->content)
-		rra(data);
+		rra(data, 1);
 	else if (data->stacka->content > data->stacka->next->content
 		&& data->stacka->next->content > data->stacka->next->next->content)
 	{
-		ra(data);
-		sa(data);
+		ra(data, 1);
+		sa(data, 1);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:34:56 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/08 18:34:57 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:45:50 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,16 +69,19 @@ void	ft_sort_100number(t_data *data)
 {
 	while (data->stacka->index >= data->index)
 	{
-		ra(data);
+		ra(data, 1);
 	}
 	if (data->stacka->index <= data->index - (data->chunk / 2))
 	{
-		pb(data);
+		pb(data, 1);
 	}
 	else if (data->stacka->index > data->index - (data->chunk / 2))
 	{
-		pb(data);
-		rb(data);
+		pb(data, 1);
+		if (data->stacka && data->stacka->index >= data->index)
+			rr(data);
+		else
+			rb(data, 1);
 	}
 	if (ft_lstsize(data->stackb) == data->index)
 		data->index = data->index + data->chunk;

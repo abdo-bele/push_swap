@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:34:53 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/08 18:34:54 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:33:13 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,18 +26,18 @@ void	ft_sort_end_push(t_data *data)
 			if (i <= 2)
 			{
 				while (i-- > 0)
-					ra(data);
+					ra(data, 1);
 			}
 			else
 			{
 				while (i++ < data->counta)
-					rra(data);
+					rra(data, 1);
 			}
 		}
 		test = test->next;
 		i++;
 	}
-	pb(data);
+	pb(data, 1);
 }
 
 void	ft_sort_5number(t_data *data)
@@ -52,8 +52,8 @@ void	ft_sort_5number(t_data *data)
 	ft_sort_3number(data);
 	while (data->stackb)
 	{
-		pa(data);
-		ra(data);
+		pa(data, 1);
+		ra(data, 1);
 	}
 }
 

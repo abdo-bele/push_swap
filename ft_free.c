@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 15:23:35 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/09 15:24:47 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:52:22 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_free(char **ab)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (ab[i])

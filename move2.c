@@ -6,13 +6,13 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:35:25 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/08 18:35:26 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:35:21 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rb(t_data *data)
+void	rb(t_data *data, int i)
 {
 	t_list	*f;
 	t_list	*r;
@@ -27,10 +27,11 @@ void	rb(t_data *data)
 	r->next = NULL;
 	l->next = r;
 	data->stackb = f;
-	ft_putstr("rb");
+	if (i == 1)
+		ft_putstr("rb");
 }
 
-void	sb(t_data *data)
+void	sb(t_data *data, int i)
 {
 	int	a;
 
@@ -39,10 +40,11 @@ void	sb(t_data *data)
 	a = data->stackb->content;
 	data->stackb->content = data->stackb->next->content;
 	data->stackb->next->content = a;
-	ft_putstr("sb");
+	if (i == 1)
+		ft_putstr("sb");
 }
 
-void	rrb(t_data *data)
+void	rrb(t_data *data, int i)
 {
 	t_list	*f;
 	t_list	*rr;
@@ -58,5 +60,6 @@ void	rrb(t_data *data)
 	l->next = NULL;
 	rr->next = f;
 	data->stackb = rr;
-	ft_putstr("rrb");
+	if (i == 1)
+		ft_putstr("rrb");
 }
