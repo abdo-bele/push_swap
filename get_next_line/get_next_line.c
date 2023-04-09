@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 15:20:25 by aarchtou          #+#    #+#             */
-/*   Updated: 2022/11/07 22:32:29 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/09 16:25:08 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,3 @@ char	*get_next_line(int fd)
 	abdo = ft_get_next_line(abdo);
 	return (ab);
 }
-
-// int	main(void)
-// {
-// 	int		fd;
-// 	char	*s;
-
-// 	fd = open("text.txt", O_RDONLY);
-// 	s = get_next_line(fd);
-// 	while (s != NULL)
-// 	{
-// 		printf("get ab = %s\n", s);
-// 		free(s);
-// 		s = get_next_line(fd);
-// 	}
-// 	return (0);
-// }
