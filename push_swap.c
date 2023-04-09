@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:34:28 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/09 17:23:12 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/09 21:51:09 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	ft_sort(t_data *data)
 		ft_sort_5number(data);
 	}
 	else if (data->count > 5)
-	{	
+	{
 		while (data->stacka)
 		{
 			if (data->index > data->count)
