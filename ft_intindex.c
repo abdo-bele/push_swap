@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:34:47 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/08 18:34:48 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/09 14:59:43 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,5 @@ void	ft_get_stacka(t_data *data, char **av)
 		data->count++;
 		i++;
 	}
-	free(ab);
+	ft_free(ab);
 }

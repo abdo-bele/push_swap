@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:34:44 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/08 18:34:45 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:16:42 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ t_list	*ft_lstnew(int content);
 int		ft_atoi(const char *str);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_chek_dup(t_data *data);
+void	ft_lstdelone(t_list *lst);
+void	ft_lstclear(t_list **lst);
 char	**ft_split(char const *s, char c);
 void	ft_get_stacka(t_data *data, char **av);
 void	ft_lstadd_back(t_list **lst, t_list *new);

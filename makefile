@@ -9,6 +9,7 @@ SRC = push_swap.c \
 		libf2.c \
 		libf3.c \
 		libf4.c \
+		ft_free.c \
 		ft_intindex.c \
 		ft_sort_3number.c \
 		ft_sort_5number.c \
@@ -21,6 +22,7 @@ SRCB = checker.c \
 		libf1.c \
 		libf2.c \
 		libf3.c \
+		ft_free.c \
 		ft_intindex.c \
 		get_next_line/get_next_line.c \
 		get_next_line/get_next_line_utils.c \

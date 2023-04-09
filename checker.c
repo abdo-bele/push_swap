@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:34:40 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/08 18:34:41 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:20:14 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,27 +50,27 @@ int	ft_is_sorted(t_data *data)
 
 int	ft_check_operation(char *str, t_data *data)
 {
-	if (ft_strncmp(str, "pa", 2) == 0)
+	if (ft_strncmp(str, "pa\n", 3) == 0)
 		return (pa(data), 1);
-	else if (ft_strncmp(str, "pb", 2) == 0)
+	else if (ft_strncmp(str, "pb\n", 3) == 0)
 		return (pb(data), 1);
-	else if (ft_strncmp(str, "ra", 2) == 0)
+	else if (ft_strncmp(str, "ra\n", 3) == 0)
 		return (ra(data), 1);
-	else if (ft_strncmp(str, "rra", 3) == 0)
+	else if (ft_strncmp(str, "rra\n", 4) == 0)
 		return (rra(data), 1);
-	else if (ft_strncmp(str, "sa", 2) == 0)
+	else if (ft_strncmp(str, "sa\n", 3) == 0)
 		return (sa(data), 1);
-	else if (ft_strncmp(str, "sb", 2) == 0)
+	else if (ft_strncmp(str, "sb\n", 3) == 0)
 		return (sb(data), 1);
-	else if (ft_strncmp(str, "rb", 2) == 0)
+	else if (ft_strncmp(str, "rb\n", 3) == 0)
 		return (rb(data), 1);
-	else if (ft_strncmp(str, "rrb", 3) == 0)
+	else if (ft_strncmp(str, "rrb\n", 4) == 0)
 		return (rrb(data), 1);
-	else if (ft_strncmp(str, "rr", 2) == 0)
+	else if (ft_strncmp(str, "rr\n", 3) == 0)
 		return (rr(data), 1);
-	else if (ft_strncmp(str, "ss", 2) == 0)
+	else if (ft_strncmp(str, "ss\n", 3) == 0)
 		return (ss(data), 1);
-	else if (ft_strncmp(str, "rrr", 3) == 0)
+	else if (ft_strncmp(str, "rrr\n", 4) == 0)
 		return (rrr(data), 1);
 	else
 		return (ft_putstr("Error"), 0);
@@ -98,9 +98,9 @@ int	main(int ac, char **av)
 			free(str);
 			str = get_next_line(0);
 		}
-		if (ft_is_sorted(&data))
-			ft_putstr("OK");
+		if (ft_is_sorted(&data) && !data.stackb)
+			return (ft_lstclear(&data.stacka), ft_putstr("OK"), 0);
 		else
-			return (ft_putstr("KO"), exit(1), 1);
+			return (ft_putstr("KO"), ft_lstclear(&data.stacka), exit(1), 1);
 	}
 }

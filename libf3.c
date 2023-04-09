@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:35:06 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/08 18:35:07 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:23:57 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,25 @@ void	ft_putstr(char *str)
 		i++;
 	}
 	write(1, "\n", 1);
+}
+
+void	ft_lstclear(t_list **lst)
+{
+	t_list	*temp;
+
+	if (lst == 0)
+		return ;
+	while (*lst)
+	{
+		temp = (*lst)->next;
+		ft_lstdelone(*lst);
+		*lst = temp;
+	}
+}
+
+void	ft_lstdelone(t_list *lst)
+{
+	if (lst == 0)
+		return ;
+	free (lst);
 }

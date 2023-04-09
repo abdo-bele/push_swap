@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:35:40 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/08 18:35:41 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/09 14:59:17 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	rrb(t_data *data);
 void	rra(t_data *data);
 void	rrr(t_data *data);
 void	ft_check(char *av);
+void	ft_free(char **ab);
 void	ft_putstr(char *str);
 void	ft_sort(t_data *data);
 void	get_chunk(t_data *data);
@@ -81,6 +82,8 @@ int		ft_atoi2(const char *str, int i, int b);
 int		ft_strcmp(const char *a, const char *b);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst);
+void	ft_lstclear(t_list **lst);
 int		ft_strncmp(const char *a, const char *b, size_t n);
 
 #endif
