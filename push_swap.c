@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:34:28 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/10 02:44:58 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:38:03 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,107 +27,33 @@ void	ft_check(char *av)
 	exit(1);
 }
 
-void	ft_sort_end_pusha(t_data *data, int push)
+void	ft_chek_drist(t_data *data)
 {
-	t_list	*test;
-	int		i;
+	t_list	*a;
+	int		c;
+	int		b;
 
-	test = data->stackb;
-	i = 0;
-	data->countb = ft_lstsize(data->stackb);
-	while (test)
-	{
-		if (test->content == push)
-		{
-			if (i <= data->countb / 2)
-			{
-				while (i-- > 0)
-					rb(data, 1);
-			}
-			else if (i > data->countb / 2)
-			{
-				while (data->countb - i++ > 0)
-					rrb(data, 1);
-			}
-		}
-		test = test->next;
-		i++;
-	}
-	pa(data, 1);
-}
-
-int ft_chek_drist(t_data *data, int l, int i)
-{
-	t_list *a = data->stackb;
-
-	while (a)
-	{
-		if (a->content == data->max)
-			break;
-		a = a->next;
-		data->countpf++;
-	}
 	a = data->stackb;
-	while (a)
+	b = 0;
+	c = 0;
+	data->countpf = 0;
+	data->countps = 0;
+	ft_get_pos(data, a, &c, &b);
+	if (c <= b)
 	{
-		if (a->content == data->hold_second)
-			break;
-		a = a->next;
-		data->countps++;
-	}
-	// printf("--%d\n", data->max);
-	// printf("--%d\n", data->hold_second);
-	// t_list *u =data->stackb;
-			
-	// 		while (u)
-	// 		{
-	// 			printf("%d\n", u->content);
-	// 			u= u->next;
-	// 		}
-	if (l == 0 && i == 1)
-	{
-		// puts("lllllllllllll");
 		ft_sort_end_pusha(data, data->max);
-		return (0);
-	}
-	if (data->countpf < (ft_lstsize(data->stackb) / 2) && data->countps < (ft_lstsize(data->stackb) / 2))
-	{
-		if (data->countpf < data->countps)
-			ft_sort_end_pusha(data, data->max);
-		else
-		{
-			ft_sort_end_pusha(data, data->hold_second);
-			return (1);
-		}
-	}
-	else if (data->countpf > (ft_lstsize(data->stackb) / 2) && data->countps > (ft_lstsize(data->stackb) / 2))
-	{
-		if (data->countpf > data->countps)
-			ft_sort_end_pusha(data, data->max);
-		else
-		{
-			ft_sort_end_pusha(data, data->hold_second);
-			return (1);
-		}
+		ft_sort_end_pusha(data, data->hold_second);
 	}
 	else
 	{
-		if (data->countpf > (ft_lstsize(data->stackb) - data->countps))
-			ft_sort_end_pusha(data, data->max);
-		else
-		{
-			ft_sort_end_pusha(data, data->hold_second);
-			return (1);
-		}
+		ft_sort_end_pusha(data, data->hold_second);
+		ft_sort_end_pusha(data, data->max);
+		sa(data, 1);
 	}
-	
-	return(0);
 }
 
 void	ft_sort(t_data *data)
 {
-	int i = 2;
-	int a = 0;
 	if (data->count <= 3)
 		ft_sort_3number(data);
 	else if (data->count <= 5)
@@ -144,28 +70,10 @@ void	ft_sort(t_data *data)
 		}
 		while (data->stackb)
 		{
-			while (i-- > 0 && data->stackb)
-			{
-				data->countb = ft_lstsize(data->stackb);
-				ft_check_maxb(data);
-				a = a + ft_chek_drist(data, a, i);
-				if (a == 1 && i == 0)
-				{
-					sa(data, 1);
-				}
-			}
-			a = 0;
-			i = 2;
-			// ft_sort_end_pusha(data);
+			data->countb = ft_lstsize(data->stackb);
+			ft_check_maxb(data);
+			ft_chek_drist(data);
 		}
-			// t_list *u =data->stacka;
-			
-			// while (u)
-			// {
-			// 	printf("%d\n", u->content);
-			// 	u= u->next;
-			// }
-			
 	}
 }
 

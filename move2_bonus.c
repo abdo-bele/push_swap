@@ -6,11 +6,11 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:35:18 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/08 18:35:19 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:41:32 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	rb(t_data *data)
 {

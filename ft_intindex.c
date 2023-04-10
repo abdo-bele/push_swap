@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:34:47 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/09 14:59:43 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:35:50 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,60 @@ void	ft_get_stacka(t_data *data, char **av)
 		i++;
 	}
 	ft_free(ab);
+}
+
+void	ft_sort_end_pusha(t_data *data, int push)
+{
+	t_list	*test;
+	int		i;
+
+	test = data->stackb;
+	i = 0;
+	data->countb = ft_lstsize(data->stackb);
+	while (test)
+	{
+		if (test->index == push)
+		{
+			if (i <= data->countb / 2)
+			{
+				while (i-- > 0)
+					rb(data, 1);
+			}
+			else if (i > data->countb / 2)
+			{
+				while (data->countb - i++ > 0)
+					rrb(data, 1);
+			}
+		}
+		test = test->next;
+		i++;
+	}
+	pa(data, 1);
+}
+
+void	ft_get_pos(t_data *data, t_list *a, int *c, int *b)
+{
+	while (a)
+	{
+		if (a->index == data->max)
+			break ;
+		a = a->next;
+		data->countpf++;
+	}
+	a = data->stackb;
+	while (a)
+	{
+		if (a->index == data->hold_second)
+			break ;
+		a = a->next;
+		data->countps++;
+	}
+	if (data->countpf > (data->countb / 2))
+		*c = data->countb - data->countpf;
+	else
+		*c = data->countpf;
+	if (data->countps > (data->countb / 2))
+		*b = data->countb - data->countps;
+	else
+		*b = data->countps;
 }

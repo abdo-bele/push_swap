@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:35:40 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/10 00:39:44 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:37:42 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ int		ft_lstsize(t_list *lst);
 int		ft_atoi(const char *str);
 t_list	*ft_lstlast(t_list *lst);
 size_t	ft_strlen(const char *c);
+void	ft_lstdelone(t_list *lst);
+void	ft_lstclear(t_list **lst);
 void	ft_intindex(t_list *data);
 void	ft_chek_dup(t_data *data);
 void	ft_check_max(t_data *data);
@@ -80,10 +82,10 @@ char	**ft_split(char const *s, char c);
 void	ft_get_stacka(t_data *data, char **av);
 int		ft_atoi2(const char *str, int i, int b);
 int		ft_strcmp(const char *a, const char *b);
+void	ft_sort_end_pusha(t_data *data, int push);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
-void	ft_lstdelone(t_list *lst);
-void	ft_lstclear(t_list **lst);
+void	ft_get_pos(t_data *data, t_list *a, int *c, int *b);
 int		ft_strncmp(const char *a, const char *b, size_t n);
 
 #endif

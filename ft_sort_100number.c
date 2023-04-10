@@ -6,7 +6,7 @@
 /*   By: aarchtou <aarchtou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 18:34:56 by aarchtou          #+#    #+#             */
-/*   Updated: 2023/04/10 00:22:26 by aarchtou         ###   ########.fr       */
+/*   Updated: 2023/04/10 15:25:43 by aarchtou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,20 +55,20 @@ void	ft_check_maxb(t_data *data)
 {
 	t_list	*a;
 
-	data->max = data->stackb->content;
-	data->hold_second = data->stackb->content;
+	data->max = 0;
+	data->hold_second = 0;
 	a = data->stackb;
 	while (a)
 	{
-		if (a->content > data->max)
-			data->max = a->content;
+		if (a->index > data->max)
+			data->max = a->index;
 		a = a->next;
 	}
 	a = data->stackb;
 	while (a)
 	{
-		if (a->content > data->hold_second && a->content != data->max)
-			data->hold_second = a->content;
+		if (a->index > data->hold_second && a->index != data->max)
+			data->hold_second = a->index;
 		a = a->next;
 	}
 }
